@@ -488,7 +488,7 @@ function pull_image() {
         echo "You need to install docker first"
     else
         echo "Pulling image ${INPUT_CONFIGS[1]}/${INPUT_CONFIGS[3]}"
-        docker pull ${INPUT_CONFIGS[1]}/${INPUT_CONFIGS[3]}
+        docker pull  --platform linux/arm64 ${INPUT_CONFIGS[1]}/${INPUT_CONFIGS[3]}
         docker tag ${INPUT_CONFIGS[1]}/${INPUT_CONFIGS[3]} ${INPUT_CONFIGS[0]}/${INPUT_CONFIGS[2]}
     fi
 }
